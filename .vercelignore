@@ -1,7 +1,6 @@
 app.py
 models.py
 database.py
-api.py
 database_api.py
 config.py
 database.db
@@ -9,3 +8,5 @@ __pycache__/
 *.pyc
 .env
 .git/
+templates/
+node_modules/
