@@ -109,7 +109,7 @@ export class LevelManager {
         }
 
         // Check if connections exist when required
-        const connectionCount = this.room.flowchartManager.connections.length;
+        const connectionCount = this.room.flowchartManager ? this.room.flowchartManager.connections.length : 0;
         const minimumConnections = Math.max(1, placedNodes.length - 1); // At least one less than nodes
 
         if (placedNodes.length >= 2 && connectionCount === 0) {

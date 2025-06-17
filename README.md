@@ -8,7 +8,7 @@ A web-based escape room game focused on technology and programming challenges.
 - **pip** (Python package installer)
 - Modern web browser (Chrome, Firefox, Safari, Edge)
 
-## Installation & Setup
+## Local Development
 
 ### 1. Install Python
 - Download from [https://python.org/downloads/](https://python.org/downloads/)
@@ -23,72 +23,92 @@ cd c:\ascended_prototype
 pip install -r requirements.txt
 ```
 
-### 4. Initialize Database
-```bash
-python app.py
-```
-The SQLite database will be created automatically on first run.
-
-### 5. Run the Application
+### 4. Run Local Development Server
 ```bash
 python app.py
 ```
 The Flask development server will start on `http://127.0.0.1:5000`
 
-## Running the Game
+## Deployment to Vercel
 
-### Start the Application
-1. Open terminal/command prompt
-2. Navigate to project directory
-3. Run: `python app.py`
-4. Open browser to: `http://127.0.0.1:5000`
+### Prerequisites
+- Node.js installed
+- Vercel CLI: `npm install -g vercel`
+- Vercel account
 
-### Game Access Points
-- **Main Game**: `http://127.0.0.1:5000/`
-- **API Test**: `http://127.0.0.1:5000/api/data`
-- **Database API**: `http://127.0.0.1:5000/api/database/table-status`
+### Deployment Steps
+
+1. **Prepare for deployment**:
+   ```bash
+   cd c:\ascended_prototype
+   ```
+
+2. **Login to Vercel**:
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy**:
+   ```bash
+   vercel --prod
+   ```
+
+4. **Follow prompts**:
+   - Set up and deploy: `Y`
+   - Which scope: Select your account
+   - Link to existing project: `N` (first time)
+   - Project name: `ascended-prototype`
+   - Directory: `./`
+
+### Live Demo
+Once deployed, your game will be available at: `https://ascended-prototype.vercel.app`
 
 ## Project Structure
 ```
 ascended_prototype/
-├── app.py                  # Main Flask application
-├── models.py              # SQLAlchemy models
-├── api.py                 # API routes
+├── api/
+│   └── index.py           # Serverless API for Vercel
+├── app.py                 # Local development server
 ├── requirements.txt       # Python dependencies
-├── database.db           # SQLite database (auto-created)
-├── templates/
-│   └── index.html         # Flask template
-└── static/
-    ├── css/               # Stylesheets
-    └── js/                # JavaScript files
+├── vercel.json           # Vercel configuration
+├── static/
+│   ├── index.html        # Main game file
+│   ├── css/              # Stylesheets
+│   ├── js/               # JavaScript files
+│   └── data/             # Game data
+└── templates/            # Flask templates (local dev)
 ```
 
-## Development
-
-### Database Management
-- **SQLite Browser**: Use DB Browser for SQLite to view/edit database
-- **Reset Database**: Delete `database.db` and restart app
-- **Migrations**: Use Flask-Migrate for schema changes
-
-### API Endpoints
+## API Endpoints
+- `GET /api/data` - Get game data
 - `POST /api/database/connect` - Test database connection
-- `POST /api/database/query` - Execute SQL query
-- `GET /api/database/table-status` - Get table health status
-- `POST /api/database/repair-table` - Repair/optimize table
+- `GET /api/database/table-status` - Get table status
+- `POST /api/database/repair-table` - Repair table simulation
 
 ## Troubleshooting
 
-### Common Issues
+### Local Development Issues
 
 1. **"Module not found" error**
    - Run: `pip install -r requirements.txt`
    - Ensure you're in the correct directory
 
-2. **Database errors**
-   - Delete `database.db` file
-   - Restart the application
-   - Database will be recreated automatically
-
-3. **Port already in use**
+2. **Port already in use**
    - Change port in app.py: `app.run(debug=True, port=5001)`
-   - Or kill the process using port 5000
+
+### Deployment Issues
+
+1. **Vercel deployment fails**
+   - Check `vercel.json` is in root directory
+   - Ensure `api/index.py` exists
+   - Check Vercel function logs in dashboard
+
+2. **JavaScript errors**
+   - Check browser console for syntax errors
+   - Ensure all file paths are correct
+   - Verify ES6 module imports are properly formatted
+
+3. **API not working**
+   - Check Vercel function logs
+   - Verify API routes in `/api/index.py`
+   - Test endpoints individually
