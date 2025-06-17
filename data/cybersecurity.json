@@ -1,0 +1,166 @@
+{
+  "incident_info": {
+    "type": "Coordinated Cyber Attack Campaign",
+    "threat_actor": "Advanced Persistent Threat Group",
+    "target": "Corporate Website Infrastructure",
+    "attack_vectors": "DDoS, Malware, Social Engineering, SQL Injection",
+    "business_impact": "Website downtime costs $5,000 per minute",
+    "security_budget": "$500 emergency cybersecurity fund"
+  },
+  "defense_types": [
+    {
+      "id": "firewall",
+      "name": "Network Firewall",
+      "description": "Blocks basic network attacks",
+      "cost": 50,
+      "damage": 25,
+      "range": 2,
+      "icon": "🔥",
+      "color": "#dc2626"
+    },
+    {
+      "id": "antivirus",
+      "name": "Antivirus Scanner",
+      "description": "Detects and removes malware",
+      "cost": 75,
+      "damage": 35,
+      "range": 1,
+      "icon": "🛡️",
+      "color": "#2563eb"
+    },
+    {
+      "id": "ids",
+      "name": "Intrusion Detection",
+      "description": "Monitors for suspicious activity",
+      "cost": 100,
+      "damage": 20,
+      "range": 3,
+      "icon": "👁️",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "honeypot",
+      "name": "Honeypot Trap",
+      "description": "Lures and captures attackers",
+      "cost": 120,
+      "damage": 50,
+      "range": 2,
+      "icon": "🍯",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "waf",
+      "name": "Web Application Firewall",
+      "description": "Protects against web attacks",
+      "cost": 150,
+      "damage": 40,
+      "range": 2,
+      "icon": "🌐",
+      "color": "#10b981"
+    },
+    {
+      "id": "ai-defense",
+      "name": "AI Security System",
+      "description": "Advanced ML-based threat detection",
+      "cost": 200,
+      "damage": 60,
+      "range": 3,
+      "icon": "🤖",
+      "color": "#06b6d4"
+    }
+  ],
+  "attack_types": [
+    {
+      "id": "ddos",
+      "name": "DDoS Attack",
+      "description": "Overwhelming traffic flood",
+      "health": 30,
+      "speed": 1.5,
+      "damage": 15,
+      "reward": 10,
+      "icon": "💥"
+    },
+    {
+      "id": "malware",
+      "name": "Malware Payload",
+      "description": "Malicious software injection",
+      "health": 50,
+      "speed": 1.0,
+      "damage": 20,
+      "reward": 15,
+      "icon": "🦠"
+    },
+    {
+      "id": "phishing",
+      "name": "Phishing Attack",
+      "description": "Social engineering attempt",
+      "health": 20,
+      "speed": 2.0,
+      "damage": 10,
+      "reward": 8,
+      "icon": "🎣"
+    },
+    {
+      "id": "sql-injection",
+      "name": "SQL Injection",
+      "description": "Database exploitation attempt",
+      "health": 40,
+      "speed": 1.2,
+      "damage": 25,
+      "reward": 20,
+      "icon": "💉"
+    },
+    {
+      "id": "zero-day",
+      "name": "Zero-Day Exploit",
+      "description": "Unknown vulnerability attack",
+      "health": 80,
+      "speed": 0.8,
+      "damage": 35,
+      "reward": 30,
+      "icon": "⚡"
+    },
+    {
+      "id": "apt",
+      "name": "APT Campaign",
+      "description": "Advanced persistent threat",
+      "health": 100,
+      "speed": 0.5,
+      "damage": 40,
+      "reward": 50,
+      "icon": "👤"
+    }
+  ],
+  "wave_patterns": [
+    {
+      "wave": 1,
+      "difficulty": "Easy",
+      "description": "Basic probing attacks",
+      "primary_threats": ["ddos", "phishing"]
+    },
+    {
+      "wave": 2,
+      "difficulty": "Moderate", 
+      "description": "Coordinated attack campaign",
+      "primary_threats": ["malware", "sql-injection"]
+    },
+    {
+      "wave": 3,
+      "difficulty": "Hard",
+      "description": "Sophisticated threat actors",
+      "primary_threats": ["zero-day", "apt"]
+    },
+    {
+      "wave": 4,
+      "difficulty": "Very Hard",
+      "description": "Multi-vector assault",
+      "primary_threats": ["ddos", "malware", "sql-injection"]
+    },
+    {
+      "wave": 5,
+      "difficulty": "Extreme",
+      "description": "State-sponsored attack",
+      "primary_threats": ["zero-day", "apt", "malware"]
+    }
+  ]
+}
