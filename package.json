@@ -1,0 +1,13 @@
+{
+  "name": "ascended-prototype",
+  "version": "1.0.0",
+  "description": "Escape the Lab Tech Edition",
+  "main": "index.py",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "dev": "python index.py"
+  },
+  "keywords": ["escape-room", "game", "flask", "python"],
+  "author": "Your Name",
+  "license": "MIT"
+}
